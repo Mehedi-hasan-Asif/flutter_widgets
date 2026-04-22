@@ -10,7 +10,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(body: Center(child: Text("Hello Flutter"))),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+            title: Text("Home Page"),
+            centerTitle: true
+        ),
+      ),
     );
   }
 }
