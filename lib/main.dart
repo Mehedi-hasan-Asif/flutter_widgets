@@ -13,8 +13,23 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-            title: Text("Home Page"),
-            centerTitle: true
+          title: Text("Home Page"),
+          backgroundColor: Colors.blue,
+          centerTitle: true,
+        ),
+        body: Center(
+          child: Text(
+            "Hello Flutter",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.deepOrange,
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              backgroundColor: Colors.white12,
+              letterSpacing: 2,
+              overflow: TextOverflow.fade,
+            ),
+          ),
         ),
       ),
     );
