@@ -13,64 +13,38 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Row & Column"),
+          title: Text("Expanded"),
           centerTitle: true,
           backgroundColor: Colors.blue,
         ),
-        body: Padding(
-          padding: EdgeInsets.all(16),
-          child: Column(
-            children: [
-              //Horizontal
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    width: 60,
-                    height: 60,
-                    color: Colors.red,
-                    alignment: Alignment.center,
-                    child: Text("Hi", style: TextStyle(color: Colors.white)),
-                  ),
-                  Container(
-                    width: 60,
-                    height: 60,
-                    color: Colors.green,
-                    alignment: Alignment.center,
-                    child: Text("Naina", style: TextStyle(color: Colors.white)),
-                  ),
-                ],
-              ),
-              SizedBox(height: 20,),
-              //Vertical
-              Column(
-
-
-                children: [
-                  Container(
-                    width: 100,
-                    height: 50,
-                    color: Colors.orange,
-                    alignment: Alignment.center,
-                    child: Text(
-                      "Hi ",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                  Container(
-                    width: 100,
-                    height: 50,
+        body: Column(
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    height: 100,
                     color: Colors.purple,
-                    alignment: Alignment.center,
-                    child: Text(
-                      "Rahul",
-                      style: TextStyle(color: Colors.white),
-                    ),
+                    child: Center(child: Text("1")),
                   ),
-                ],
-              ),
-            ],
-          ),
+                ),
+                Expanded(
+                  child: Container(
+                    height: 100,
+                    color: Colors.amber,
+                    child: Center(child: Text("2")),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    height: 100,
+                    color: Colors.deepOrange,
+                    child: Center(child: Text("3")),
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
