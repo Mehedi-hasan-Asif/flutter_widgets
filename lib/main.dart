@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -13,38 +13,16 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Expanded"),
-          centerTitle: true,
+          title: const Text("Image"),
           backgroundColor: Colors.blue,
+          centerTitle: true,
         ),
-        body: Column(
-          children: [
-            Row(
-              children: [
-                Expanded(
-                  child: Container(
-                    height: 100,
-                    color: Colors.purple,
-                    child: Center(child: Text("1")),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    height: 100,
-                    color: Colors.amber,
-                    child: Center(child: Text("2")),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    height: 100,
-                    color: Colors.deepOrange,
-                    child: Center(child: Text("3")),
-                  ),
-                ),
-              ],
-            ),
-          ],
+        body: Center(
+          child: Image.asset(
+            "images/app.jpg",
+            width: 200,
+            height: 200,
+          ),
         ),
       ),
     );
