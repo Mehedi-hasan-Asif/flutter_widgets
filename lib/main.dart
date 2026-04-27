@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -9,47 +9,37 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HomePage(),
-    );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: HomePage());
   }
 }
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("ListView"),
+        title: Text("GridView"),
+        backgroundColor: Colors.purple,
         centerTitle: true,
-        backgroundColor: Colors.blue,
       ),
-      body: ListView.builder(
-        itemCount: 30,
-        itemBuilder: (BuildContext context, int index) {
-          return ListTile(title: Text("$index"));
+      body: GridView.builder(
+        itemCount: 20,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          crossAxisSpacing: 12,
+          mainAxisSpacing: 12,
+          childAspectRatio: 3 / 4,
+        ),
+        itemBuilder: (context, index) {
+          return Card(child: Center(child: Text("item $index")));
         },
-        // body: ListView(
-        //   children: [
-        //     Container(color: Colors.red, height: 100),
-        //     Divider(),
-        //     Container(color: Colors.orange, height: 100),
-        //     Divider(),
-        //     Container(color: Colors.purple, height: 100),
-        //     Divider(),
-        //     Container(color: Colors.amber, height: 100),
-        //     Divider(),
-        //     Container(color: Colors.greenAccent, height: 100),
-        //     Divider(),
-        //     Container(color: Colors.indigo, height: 100),
-        //     Divider(),
-        //     Container(color: Colors.green, height: 100),
-        //     Divider(),
-        //     Container(color: Colors.limeAccent, height: 100),
-        //   ],
       ),
     );
   }
