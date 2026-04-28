@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'my_home_page.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -9,38 +11,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: HomePage());
-  }
-}
-
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("GridView"),
-        backgroundColor: Colors.purple,
-        centerTitle: true,
-      ),
-      body: GridView.builder(
-        itemCount: 20,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 3,
-          crossAxisSpacing: 12,
-          mainAxisSpacing: 12,
-          childAspectRatio: 3 / 4,
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.blue,
+          foregroundColor: Colors.white,
         ),
-        itemBuilder: (context, index) {
-          return Card(child: Center(child: Text("item $index")));
-        },
       ),
+      home: MyHomePage(),
     );
   }
 }
