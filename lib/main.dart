@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'my_home_page.dart';
+import 'package:hello/screens/my_home_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,7 +20,7 @@ class MyApp extends StatelessWidget {
           foregroundColor: Colors.white,
         ),
       ),
-      home: MyHomePage(),
+      home: MyHomeScreen(),
     );
   }
 }
