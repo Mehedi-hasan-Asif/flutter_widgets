@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hello/screens/my_home_screen.dart';
+import 'package:hello/widgets/bottom_navigation_bar.dart';
 
 void main() {
   runApp(MyApp());
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
           foregroundColor: Colors.white,
         ),
       ),
-      home: MyHomeScreen(),
+      home: MyBottomNavBar(),
     );
   }
 }
