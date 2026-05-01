@@ -8,7 +8,6 @@ import '../widgets/account_manager.dart';
 class MyHomeScreen extends StatelessWidget {
   const MyHomeScreen({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,7 +57,7 @@ class MyHomeScreen extends StatelessWidget {
               ],
             ),
           ),
-          Expanded(child: TransactionList(),),
+          Expanded(child: TransactionList()),
         ],
       ),
     );
